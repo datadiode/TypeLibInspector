@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ***************************************************************************
+ $Revision: 1.2 $
+ $Date: 2010/07/23 16:54:57 $
+ Author: doudou
+ Description: Constant description table (to be included in XSL).
+ *************************************************************************** -->
+<tldoc-defs xmlns="http://autoitscript/tldoc/xslt">
+    <typedmap>
+        <type vt="0" name="VT_EMPTY">no value</type>
+        <type vt="1" name="VT_NULL">propagating null value</type>
+        <type vt="2" name="VT_I2">2-byte integer value</type>
+        <type vt="3" name="VT_I4">4-byte integer value</type>
+        <type vt="4" name="VT_R4">IEEE 4-byte real value</type>
+        <type vt="5" name="VT_R8">8-byte IEEE real value</type>
+        <type vt="6" name="VT_CY">currency value</type>
+        <type vt="7" name="VT_DATE">value denoting a date and time</type>
+        <type vt="8" name="VT_BSTR">OLE string</type>
+        <type vt="9" name="VT_DISPATCH">object</type>
+        <type vt="10" name="VT_ERROR">SCODE value</type>
+        <type vt="11" name="VT_BOOL">Boolean, True/False, value</type>
+        <type vt="12" name="VT_VARIANT">VARIANT structure</type>
+        <type vt="13" name="VT_UNKNOWN">object that implements the IUnknown interface</type>
+        <type vt="14" name="VT_DECIMAL">decimal value</type>
+        <type vt="16" name="VT_I1">1-byte character value</type>
+        <type vt="17" name="VT_UI1">unsigned 1-byte character</type>
+        <type vt="18" name="VT_UI2">unsigned 2-byte integer value</type>
+        <type vt="19" name="VT_UI4">unsigned 4-byte integer value</type>
+        <type vt="20" name="VT_I8">8-byte integer value</type>
+        <type vt="21" name="VT_UI8">unsigned 8-byte integer value</type>
+        <type vt="22" name="VT_INT">integer value</type>
+        <type vt="23" name="VT_UINT">unsigned integer value</type>
+        <type vt="24" name="VT_VOID">nothing</type>
+        <type vt="24" name="VT_VOID" byref="1">anything</type>
+        <type vt="25" name="VT_HRESULT">HRESULT value</type>
+        <type vt="26" name="VT_PTR">unique pointer</type>
+        <type vt="27" name="VT_SAFEARRAY">multidimensional array of OLE Automation types</type>
+        <type vt="28" name="VT_CARRAY">fixed-size array</type>
+        <type vt="29" name="VT_USERDEFINED">user defined type</type>
+        <type vt="30" name="VT_LPSTR">NULL-terminated string</type>
+        <type vt="31" name="VT_LPWSTR">zero-terminated string of UNICODE characters</type>
+        <type vt="36" name="VT_RECORD">BRECORD (representation of UDT)</type>
+        <type vt="37" name="VT_INT_PTR">system pointer size signed integer value</type>
+        <type vt="38" name="VT_UINT_PTR">system pointer size unsigned integer value</type>
+        <type vt="64" name="VT_FILETIME">64-bit FILETIME structure</type>
+        <type vt="65" name="VT_BLOB">DWORD count of bytes, followed by that many bytes of data</type>
+        <type vt="66" name="VT_STREAM">IStream interface that represents a stream</type>
+        <type vt="67" name="VT_STORAGE">IStorage interface, representing a storage object</type>
+        <type vt="68" name="VT_STREAMED_OBJECT">stream containing a serialized object</type>
+        <type vt="69" name="VT_STORED_OBJECT">IStorage containing a loadable object</type>
+        <type vt="70" name="VT_BLOB_OBJECT">blob that contains a serialized object</type>
+        <type vt="71" name="VT_CF">CLIPDATA structure</type>
+        <type vt="72" name="VT_CLSID">class identifier (CLSID) (or other globally unique identifier (GUID))</type>
+        <type vt="4096" name="VT_VECTOR">fixed-size array</type>
+        <type vt="8192" name="VT_ARRAY">variable size array</type>
+    </typedmap>
+    
+    <typeflags>
+        <flag val="1" name="TYPEFLAG_FAPPOBJECT">Application object.</flag>
+        <flag val="2" name="TYPEFLAG_FCANCREATE">Instances of the type can be created by ITypeInfo::CreateInstance.</flag>
+        <flag val="4" name="TYPEFLAG_FLICENSED">The type is licensed.</flag>
+        <flag val="8" name="TYPEFLAG_FPREDECLID">The type is predefined.</flag>
+        <flag val="16" name="TYPEFLAG_FHIDDEN">The type should not be displayed to browsers.</flag>
+        <flag val="32" name="TYPEFLAG_FCONTROL">The type is a control from which other types will be derived.</flag>
+        <flag val="64" name="TYPEFLAG_FDUAL">The types in the interface derive from IDispatch and are fully compatible with Automation.</flag>
+        <flag val="128" name="TYPEFLAG_FNONEXTENSIBLE">The interface cannot add members at run time.</flag>
+        <flag val="256" name="TYPEFLAG_FOLEAUTOMATION">The types used in the interface are fully compatible with Automation.</flag>
+        <flag val="512" name="TYPEFLAG_FRESTRICTED">Should not be accessible from macro languages.</flag>
+        <flag val="1024" name="TYPEFLAG_FAGGREGATABLE">The class supports aggregation.</flag>
+        <flag val="2028" name="TYPEFLAG_FREPLACEABLE">The object supports IConnectionPointWithDefault, and has default behaviors.</flag>
+        <flag val="4096" name="TYPEFLAG_FDISPATCHABLE">The interface derives from IDispatch, either directly or indirectly.</flag>
+    </typeflags>
+    <libflags>
+        <flag val="1" name="LIBFLAG_FRESTRICTED">The type library is restricted, and should not be displayed to users.</flag>
+        <flag val="2" name="LIBFLAG_FCONTROL">The type library describes controls, and should not be displayed in type browsers intended for nonvisual objects.</flag>
+        <flag val="4" name="LIBFLAG_FHIDDEN">The type library should not be displayed to users, although its use is not restricted.</flag>
+        <flag val="8" name="LIBFLAG_FHASDISKIMAGE">The type library exists in a persisted form on disk.</flag>
+    </libflags>
+    <funcflags>
+        <flag val="1" name="FUNCFLAG_FRESTRICTED">The function should not be accessible from macro languages.</flag>
+        <flag val="2" name="FUNCFLAG_FSOURCE">The function returns an object that is a source of events.</flag>
+        <flag val="4" name="FUNCFLAG_FBINDABLE">The function that supports data binding.</flag>
+        <flag val="8" name="FUNCFLAG_FREQUESTEDIT">Any call to the method that sets the property results first in a call to IPropertyNotifySink::OnRequestEdit.</flag>
+        <flag val="16" name="FUNCFLAG_FDISPLAYBIND">The function that is displayed to the user as bindable.</flag>
+        <flag val="32" name="FUNCFLAG_FDEFAULTBIND">The function that best represents the object.</flag>
+        <flag val="64" name="FUNCFLAG_FHIDDEN">The function should not be displayed to the user.</flag>
+        <flag val="128" name="FUNCFLAG_FUSESGETLASTERROR">The function supports GetLastError.</flag>
+        <flag val="256" name="FUNCFLAG_FDEFAULTCOLLELEM">Permits an optimization in which the compiler looks for a member named "xyz" on the type of "abc".</flag>
+        <flag val="512" name="FUNCFLAG_FUIDEFAULT">The type information member is the default member for display in the user interface.</flag>
+        <flag val="1024" name="FUNCFLAG_FNONBROWSABLE">The property appears in an object browser, but not in a properties browser.</flag>
+        <flag val="2028" name="FUNCFLAG_FREPLACEABLE">Tags the interface as having default behaviors.</flag>
+        <flag val="4096" name="FUNCFLAG_FIMMEDIATEBIND">Mapped as individual bindable properties.</flag>
+    </funcflags>
+    <varflags>
+        <flag val="1" name="VARFLAG_FREADONLY">Assignment to the variable should not be allowed.</flag>
+        <flag val="2" name="VARFLAG_FSOURCE">The variable returns an object that is a source of events.</flag>
+        <flag val="4" name="VARFLAG_FBINDABLE">The variable supports data binding.</flag>
+        <flag val="8" name="VARFLAG_FREQUESTEDIT">Any attempt to directly change the property results in a call to IPropertyNotifySink::OnRequestEdit.</flag>
+        <flag val="16" name="VARFLAG_FDISPLAYBIND">The variable is displayed to the user as bindable.</flag>
+        <flag val="32" name="VARFLAG_FDEFAULTBIND">The variable is the single property that best represents the object.</flag>
+        <flag val="64" name="VARFLAG_FHIDDEN">The variable should not be displayed to the user in a browser.</flag>
+        <flag val="128" name="VARFLAG_FRESTRICTED">The variable should not be accessible from macro languages.</flag>
+        <flag val="256" name="VARFLAG_FDEFAULTCOLLELEM">Permits an optimization in which the compiler looks for a member named "xyz" on the type of abc.</flag>
+        <flag val="512" name="VARFLAG_FUIDEFAULT">The variable is the default display in the user interface.</flag>
+        <flag val="1024" name="VARFLAG_FNONBROWSABLE">The variable appears in an object browser, but not in a properties browser.</flag>
+        <flag val="2028" name="VARFLAG_FREPLACEABLE">Tags the interface as having default behaviors.</flag>
+        <flag val="4096" name="VARFLAG_FIMMEDIATEBIND">The variable is mapped as individual bindable properties.</flag>
+    </varflags>
+</tldoc-defs>

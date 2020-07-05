@@ -1,0 +1,161 @@
+@charset "UTF-8";
+/*------------------------------------------------------------------------------
+ * Version:        0.0.2
+ * Author:         doudou
+ * Description:    Styles for TypeLibInspector's main view.
+ * $Revision: 1.3 $
+ * $Date: 2010/07/29 14:29:34 $
+ -----------------------------------------------------------------------------*/
+body {
+    font-family: Tahoma, Arial, Helvetica, sans-serif;
+    font-size: 80%;
+}
+dt {
+    font-style: italic; 
+}
+h1 {
+    padding: 4px;
+    font-size: 1.4em;
+    margin: 10px 0;
+}
+h2 {
+    color: white;
+    background-color: darkblue;
+    padding: 4px;
+    font-size: 1.3em;
+    margin: 15px 0;
+}
+h3 {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+h4 {
+    font-size: 1.1em;
+    margin: 5px 0;
+}
+p {
+    margin: 0;
+    padding: 5px;
+}
+p, code, dfn {
+    font-size: 1.0em;
+}
+tt, code, pre, kbd {
+    font-family: Courier New, monospace;
+}
+ul, ol, dl {
+    margin: 0;
+    padding: 0;
+    zoom: 1;
+}
+ul li, ol li {
+    margin-left: 2em;
+}
+sup {
+    line-height: 1.0em;
+    font-size: x-small;
+    font-weight: bold;
+}
+a:link, a:visited, a:active {
+    text-decoration: none;
+}
+a:hover, a:focus {
+    text-decoration: underline;
+}
+.icoleft, .icolefttop {
+    padding-left: 18px;
+    background-repeat: no-repeat;
+}
+.icoleft {
+    background-position: left 2px;
+}
+.icolefttop {
+    background-position: left top;
+}
+.Const {
+    background-image: url(../icons/Const.ico);
+}
+.PropertyRO {
+    background-image: url(../icons/PropertyRO.ico);
+}
+.Property {
+    background-image: url(../icons/Property.ico);
+}
+.PropertyGet {
+    background-image: url(../icons/PropertyGet.ico);
+}
+.PropertyPut {
+    background-image: url(../icons/PropertyPut.ico);
+}
+.PropertyPutRef {
+    background-image: url(../icons/PropertyPutRef.ico);
+}
+.Function {
+    background-image: url(../icons/Function.ico);
+}
+.DispInterface {
+    background-image: url(../icons/DispInterface.ico);
+}
+.Interface {
+    background-image: url(../icons/Interface.ico);
+}
+.CoClass {
+    background-image: url(../icons/CoClass.ico);
+}
+.Enum {
+    background-image: url(../icons/Enum.ico);
+}
+.Record {
+    background-image: url(../icons/Record.ico);
+}
+.Module {
+    background-image: url(../icons/Module.ico);
+}
+.Alias {
+    background-image: url(../icons/Alias.ico);
+}
+.Impl {
+    background-image: url(../icons/Impl.ico);
+}
+.VTable {
+    background-image: url(../icons/VTable.ico);
+}
+.Base {
+    background-image: url(../icons/Base.ico);
+}
+.TypeLib {
+    background-image: url(../icons/TypeLib.ico);
+}
+.onlinehelp {
+    background-image: url(../icons/help.ico);
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+}
+.h16 {
+    display: inline-block;
+    height: 16px;
+    width: 1px;
+}
+.typename {
+    color: #3366CC;
+    font-family: Courier New, monospace;
+}
+.membsignature {
+    border: solid 1px silver;
+    background: #FFFFCC;
+    display: block;
+    padding: 10px;
+}
+.memblist {
+    border: solid 1px silver;
+    background: #F5F5F5;
+}
+.memblist li {
+    list-style-type: none;
+    min-height: 18px;
+    vertical-align: middle;
+}
+.memblist li img {
+    padding: 0;
+    margin: 0;
+}
