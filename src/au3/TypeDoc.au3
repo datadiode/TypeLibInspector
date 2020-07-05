@@ -140,7 +140,7 @@ Func TypeDoc_InitInfoNode(ByRef $node, Const ByRef $info, $nodeType = 0)
         Local $kid = $typeDoc_objDOM.createElement("Attributes")
         $kid.setAttribute("mask", .AttributeMask)
         $node.appendChild($kid)
-        
+
         If 0 < .AttributeMask Then
             Switch $nodeType
                 Case 0
@@ -219,9 +219,9 @@ Func TypeDoc_ExpandTypeInfoNode(Const ByRef $oInfo, ByRef $result, $feedback = F
         EndIf
     EndIf
     If Not IsObj($info) Then Return
-    
+
     If $feedback Then GUISetCursor(15, 1, $frmMain)
-    
+
     Local $typeKind = $info.TypeKind
     Local $coll, $collInfos, $objSubinfo
     If $TKIND_DISPATCH = $typeKind And BitAnd($TYPEFLAG_FDUAL, $info.AttributeMask) Then
@@ -301,7 +301,7 @@ Func TypeDoc_ExpandTypeInfoNode(Const ByRef $oInfo, ByRef $result, $feedback = F
             $result.appendChild($coll)
     EndSwitch
     $result.removeAttribute("tldapp-expand")
-    
+
     If $feedback Then GUISetCursor(-1, 0, $frmMain)
 EndFunc
 
@@ -325,16 +325,16 @@ Func TypeDoc_CreatePropertyInfoNode(Const ByRef $info, $parentKind)
         $kind = $info.VarKind
     EndIf
     $result.setAttribute("kind", $kind)
-        
+
     Local $objVarInfo = $info.ReturnType
     $result.appendChild(TypeDoc_CreateVarInfoNode($objVarInfo))
-    
+
     If $VAR_CONST = $kind Then
         Local $kid = $typeDoc_objDOM.createElement("Value")
         $kid.appendChild($typeDoc_objDOM.createTextNode("" & $info.Value))
         $result.appendChild($kid)
     EndIf
-    
+
     Return $result
 EndFunc
 
@@ -359,7 +359,7 @@ Func TypeDoc_CreateMethodInfoNode(Const ByRef $info)
         $result.setAttribute("call", .CallConv)
         $result.setAttribute("invoke", $invKind)
         $result.setAttribute("vtable", .VTableOffset)
-                
+
         Local $coll = $typeDoc_objDOM.createElement("Parameters")
         Local $collInfos = .Parameters
         Local $objSubinfo, $objVarInfo, $param, $kid
@@ -370,17 +370,17 @@ Func TypeDoc_CreateMethodInfoNode(Const ByRef $info)
             If Not $name Then $name = $info.Name & "Val"
             $param.setAttribute("name", $name)
             ; .Optional property in TLBINF is arbitrary
-            $param.setAttribute("optional", 0 < BitAnd($PARAMFLAG_FOPT, $objSubinfo.Flags))
-            
+            $param.setAttribute("optional", 0 < BitAnd($PARAMFLAG_FOPT, $objSubinfo.Flags) ? 1 : 0)
+
             $kid = $typeDoc_objDOM.createElement("Flags")
             $kid.setAttribute("mask", $objSubinfo.Flags)
             TypeDoc_ExplodeFlags($objSubinfo.Flags, $PARAMFLAG_FIN, $PARAMFLAG_FHASCUSTDATA, $kid)
             $param.appendChild($kid)
-            
+
             $objVarInfo = $objSubinfo.VarTypeInfo
             $param.appendChild(TypeDoc_CreateVarInfoNode($objVarInfo))
             $coll.appendChild($param)
-            
+
             ; .Default property in TLBINF is arbitrary
             If BitAnd($PARAMFLAG_FHASDEFAULT, $objSubinfo.Flags) Then
                 Local $val = $objSubinfo.DefaultValue
@@ -392,7 +392,7 @@ Func TypeDoc_CreateMethodInfoNode(Const ByRef $info)
         Next
         $objVarInfo = 0
         $objSubinfo = 0
-        
+
         Local $objRetInfo = .ReturnType
         If IsObj($app_objTLI) Then
             ; repair crapy "VB" view in TLBINF
@@ -408,7 +408,7 @@ Func TypeDoc_CreateMethodInfoNode(Const ByRef $info)
                         $param.appendChild(TypeDoc_CreateVarInfoNode($objRetInfo))
                         $coll.appendChild($param)
                         $objRetInfo = 0
-                        
+
                         $kid = $typeDoc_objDOM.createElement("VarType")
                         $kid.setAttribute("vt", $__Au3Obj_VT_VOID)
                         $result.appendChild($kid)
@@ -416,7 +416,7 @@ Func TypeDoc_CreateMethodInfoNode(Const ByRef $info)
             EndSwitch
         EndIf
         If IsObj($objRetInfo) Then $result.appendChild(TypeDoc_CreateVarInfoNode($objRetInfo))
-        
+
         $result.appendChild($coll)
     EndWith
     Return $result
@@ -457,8 +457,8 @@ Func TypeDoc_CreateVarInfoNode(Const ByRef $info)
                     Local $dims = $info.ArrayBounds($bounds)
                     For $i = 0 To $dims - 1
                         Local $d = $typeDoc_objDOM.createElement("Dim")
-                        $d.setAttribute("lbound", $bounds[$i, 0])
-                        $d.setAttribute("ubound", $bounds[$i, 1])
+                        $d.setAttribute("lbound", $bounds[$i][0])
+                        $d.setAttribute("ubound", $bounds[$i][1])
                         $kid.appendChild($d)
                     Next
                 Else
