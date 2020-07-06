@@ -9,7 +9,7 @@
 #AutoIt3Wrapper_Res_Language=1033
 #AutoIt3Wrapper_Res_Description=Type Library Inspector Application
 #AutoIt3Wrapper_Res_Comment=Property inspector and documentation generator for COM type libraries
-#AutoIt3Wrapper_Res_Fileversion=0.1.0.27
+#AutoIt3Wrapper_Res_Fileversion=0.1.0.28
 #AutoIt3Wrapper_Res_FileVersion_AutoIncrement=p
 #AutoIt3Wrapper_Res_LegalCopyright=© 2010 diVISION
 #AutoIt3Wrapper_Res_Field=ProductName|Type Library Inspector
